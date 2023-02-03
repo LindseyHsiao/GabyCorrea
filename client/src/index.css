@@ -2,16 +2,114 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@layer base {
+        h5 {
+            @apply absolute px-6 duration-200 w-52 bottom-4 md:bottom-8 md:px-10 group-hover:scale-110 group-hover:text-black;
+        }
+    }
+    @layer components {
+        .btn {
+            @apply px-5 py-2 my-0 font-bold tracking-widest uppercase border-2 border-black hover:bg-black hover:text-white;
+        }
+    }
+
+    @layer base {
+        h3 {
+            @apply mb-8 text-4xl font-bold text-gray-900 uppercase md:text-xl
+        }
+    }
+
+    @layer base {
+        h4 {
+            @apply mb-2 text-2xl font-bold text-gray-900 uppercase md:text-xl
+        }
+    }
+
+
+    
+    .item-container {
+        @apply flex flex-col justify-between w-full space-y-6 text-2xl text-white uppercase md:flex-row md:space-y-0 md:space-x-8;
+    }
+    
+    .item {
+        @apply relative overflow-hidden md:w-1/4;
+    }
+    
+    .item-gradient {
+        @apply absolute top-0 bottom-0 right-0 left-0 bg-gradient-to-b from-transparent to-gray-900 group-hover:from-gray-50 group-hover:to-white group-hover:opacity-70;
+    }
+
+    .section-container {
+        @apply max-w-6xl mx-auto text-center px-10;
+    }
+
+    .section-content {
+        @apply max-w-3xl mx-auto text-xl leading-9 text-center text-gray-700
+    }
+
+    .contact{
+    max-width: 57rem !important;
+    }
+    
+    /*.ficon:hover {
+        filter: invert(53%) sepia(68%) saturate(434%) hue-rotate(121deg) brightness(101%) contrast(94%)
+    }*/
+
+/* #hero {
+    background-image: url('../images/hero-image.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+} */
+
+@media(max-width: 576px) {
+    /* #hero {
+        background-image: url('../images/harpstrings.png');
+        background-position: center;
+    } */
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* hamburger menu */
+.hamburger {
+    cursor: pointer;
+    width: 24px;
+    height: 24px;
+    transition: all 0.25s;
+    position: relative;
+}
+
+.hamburger-top,
+.hamburger-middle,
+.hamburger-bottom {
+    position: absolute;
+    width: 24px;
+    height: 2px;
+    top: 0;
+    left: 0;
+    background: #fff;
+    transform: rotate(0);
+    transition: all 0.5s;
+}
+
+.hamburger-middle {
+    transform: translateY(7px);
+}
+
+.hamburger-bottom {
+    transform: translateY(14px);
+}
+
+.open {
+    transform: rotate(90deg);
+}
+
+.open .hamburger-top {
+    transform: rotate(45deg) translateY(6px) translateX(6px);
+}
+
+.open .hamburger-middle {
+    display: none;
+}
+
+.open .hamburger-bottom {
+    transform: rotate(-45deg) translateY(6px) translateX(-6px);
 }
