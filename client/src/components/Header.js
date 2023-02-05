@@ -13,12 +13,12 @@ const [toggle, setToggle] = useState(false)
                 {/* <!-- Flex container for logo and left menu --> */}
                 <div className="flex items center space-x-10">
                     {/* <!-- Logo --> */}
-                    <img src={logo} alt="" className='h-10'/>
+                    <a href="/"><img src={logo} alt="logo" className='h-10'/></a>
                     {/* <!-- Left menu --> */}
                     <div className="hidden pt-1 space-x-10 font-bold lg:flex">
-                        <a href="#" className="hover:opacity-70 uppercase">About</a>
-                        <a href="#" className="hover:opacity-70 uppercase">Testimonies</a>
-                        <a href="#" className="hover:opacity-70 uppercase">Contact</a>
+                        <a href="/About" className="hover:opacity-70 uppercase">About</a>
+                        <a href="/Testimonies" className="hover:opacity-70 uppercase">Testimonies</a>
+                        <a href="/Contact" className="hover:opacity-70 uppercase">Contact</a>
                     </div>
                 </div>
     
