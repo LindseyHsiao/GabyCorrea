@@ -29,11 +29,11 @@ const userSchema = new Schema(
         isPremium: {
             type: Boolean,
             default: false
-          },
-          isAdmin: {
+        },
+        isAdmin: {
             type: Boolean,
             default: false
-          }
+        }
 
     },
     {
