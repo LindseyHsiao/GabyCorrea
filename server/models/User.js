@@ -12,28 +12,29 @@ const userSchema = new Schema(
         password: {
             type: String,
             required: true,
-            minlength: 5
+            minlength: 5,
+            required: true,
         },
-        // firstName: {
-        //     type: String,
-        //     required: true
-        // },
-        // lastName: {
-        //     type: String,
-        //     required: true
-        // },
-        // address: {
-        //     type: String,
-        //     required: true
-        // },
-        // isPremium: {
-        //     type: Boolean,
-        //     default: false
-        // },
-        // isAdmin: {
-        //     type: Boolean,
-        //     default: false
-        // }
+        firstName: {
+            type: String,
+            required: true
+        },
+        lastName: {
+            type: String,
+            required: true
+        },
+        address: {
+            type: String,
+            required: true
+        },
+        isPremium: {
+            type: Boolean,
+            default: false
+        },
+        isAdmin: {
+            type: Boolean,
+            default: false
+        }
 
     },
     {
