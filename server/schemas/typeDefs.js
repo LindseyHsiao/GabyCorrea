@@ -27,7 +27,9 @@ type Auth {
         password: String!, 
         firstName: String!, 
         lastName: String!, 
-        address: String!, isAdmin: Boolean, isPremium: Boolean): Auth
+        address: String!, 
+        isAdmin: Boolean, 
+        isPremium: Boolean): Auth
   }
 
 `;

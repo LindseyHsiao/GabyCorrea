@@ -2,7 +2,7 @@ import logo from '../assets/images/gcLogo.png'
 
 import {useState} from 'react';
 import { Link } from 'react-router-dom';
-
+import Auth from '../utils/auth'
 
 export default function Header() {
 
@@ -27,10 +27,17 @@ const [toggle, setToggle] = useState(false)
                 </div>
     
                 {/* <!-- Right buttons menu --> */}
-                <div className="hidden items-center space-x-6 font-bold lg:flex">
-                    <div className="hover:opacity-70 uppercase">Login</div>
-                    <Link to="/SignUp" className="px-3 py-2 font-bold text-white bg-black rounded hover:opacity-70 uppercase">Sign Up</Link>
+                {Auth.loggedIn() ? (
+                    <div className="hidden items-center space-x-6 font-bold lg:flex">
+                    <button onClick={Auth.logout} className="px-3 py-2 font-bold text-white bg-black rounded hover:opacity-70 uppercase">Logout</button>
                 </div>
+                ) : (
+
+                    <div className="hidden items-center space-x-6 font-bold lg:flex">
+                        <Link to="/Login" className="hover:opacity-70 uppercase">Login</Link>
+                        <Link to="/SignUp" className="px-3 py-2 font-bold text-white bg-black rounded hover:opacity-70 uppercase">Sign Up</Link>
+                    </div>
+                )}
                 {/* <!-- todo:hamburger menu --> */}
             </div>
             {/* <!-- todo: mobile menu --> */}
