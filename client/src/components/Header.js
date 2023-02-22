@@ -1,7 +1,11 @@
 import logo from '../assets/images/gcLogo.png'
 
 import {useState} from 'react';
+import { Link } from 'react-router-dom';
+
+
 export default function Header() {
+
 const [toggle, setToggle] = useState(false)
 
     return (
@@ -13,19 +17,19 @@ const [toggle, setToggle] = useState(false)
                 {/* <!-- Flex container for logo and left menu --> */}
                 <div className="flex items center space-x-10">
                     {/* <!-- Logo --> */}
-                    <a href="/"><img src={logo} alt="logo" className='h-10'/></a>
+                    <Link to="/"><img src={logo} alt="logo" className='h-10'/></Link>
                     {/* <!-- Left menu --> */}
                     <div className="hidden pt-1 space-x-10 font-bold lg:flex">
-                        <a href="/About" className="hover:opacity-70 uppercase">About</a>
-                        <a href="/Testimonies" className="hover:opacity-70 uppercase">Testimonies</a>
-                        <a href="/Contact" className="hover:opacity-70 uppercase">Contact</a>
+                        <Link to="/About" className="hover:opacity-70 uppercase">About</Link>
+                        <Link to="/Testimonies" className="hover:opacity-70 uppercase">Testimonies</Link>
+                        <Link to="/Contact" className="hover:opacity-70 uppercase">Contact</Link>
                     </div>
                 </div>
     
                 {/* <!-- Right buttons menu --> */}
                 <div className="hidden items-center space-x-6 font-bold lg:flex">
                     <div className="hover:opacity-70 uppercase">Login</div>
-                    <a href="#" className="px-3 py-2 font-bold text-white bg-black rounded hover:opacity-70 uppercase">Sign Up</a>
+                    <Link to="/SignUp" className="px-3 py-2 font-bold text-white bg-black rounded hover:opacity-70 uppercase">Sign Up</Link>
                 </div>
                 {/* <!-- todo:hamburger menu --> */}
             </div>
