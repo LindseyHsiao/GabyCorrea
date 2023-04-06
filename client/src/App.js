@@ -8,6 +8,7 @@ import Testimonies from './pages/Testimonies';
 import Contact from './pages/Contact';
 import SignUp from './pages/SignUp';
 import Login from './pages/Login';
+import SurveyComponent from './pages/SurveyComponent'
 
 
 const httpLink = createHttpLink({
@@ -42,6 +43,7 @@ function App() {
           <Route path="/Contact" element={<Contact />} />
           <Route path="/SignUp" element={<SignUp />} />
           <Route path="/Login" element={<Login />} />
+          <Route path="/Survey" element={<SurveyComponent />} />
         </Routes>
       </BrowserRouter>
     </ApolloProvider>

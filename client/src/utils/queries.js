@@ -7,3 +7,31 @@ export const QUERY_USER = gql`
     }
   }
 `;
+
+export const QUERY_ME = gql`
+{
+  me {
+  _id
+  email
+  firstName
+  lastName
+  address
+  isPremium
+  isAdmin
+  }
+}
+`;
+
+export const QUERY_ME_BASIC = gql`
+{
+  me {
+  _id
+  email
+  firstName
+  lastName
+  address
+  isPremium
+  isAdmin
+  }
+}
+`;

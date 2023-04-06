@@ -1,11 +1,12 @@
-import bwBarLift from '../assets/images/bwBarLift.jpg'
-import sand from '../assets/images/sand.jpg'
+// import bwBarLift from '../assets/images/bwBarLift.jpg'
+// import sand from '../assets/images/sand.jpg'
+
 
 export default function Home() {
     return (
         <>
-            <div id='home-page-img'>
-                <img src={bwBarLift} alt='' className='max-w-full h-auto'></img>
+           <div id='home-page-img'>
+                <img src='https://github.com/LindseyHsiao/GabyCorrea/blob/main/client/src/assets/images/bwBarLift.jpg?raw=true' alt='' className='max-w-full h-auto'></img>
             </div>
 
             <section id="strengthen" className="py-36 bg-orange-50">
@@ -51,7 +52,7 @@ export default function Home() {
                         <div className="absolute -ml-10 left-1/2 -top-10 md:left-16">
                             {/* <!-- Image container for background and center --> */}
                             <div className="flex items-center justify-center w-20 h-20 p-4 rounded-full bg-black">
-                                <img src="images/icon-detailed-records.svg" alt="" />
+                                {/* <img src="images/icon-detailed-records.svg" alt="" /> */}
                             </div>
                         </div>
                         <h5 className="pt-6 text-xl font-bold text-center uppercase md:text-left">
@@ -81,36 +82,7 @@ export default function Home() {
                 </div>
             </section>
 
-            
-            <section id="contact-details">
-        <div className="section-container contact">
-            <div className="relative flex flex-col md:flex-row md:space-x-32">
-                {/* image */}
-                <div className="md:w-1/2">
-                    <img src={sand} alt="Jan" className="md:absolute top-0 right-[40%]"/>
-                </div>
-                {/* items container */}
-                <div className="flex flex-col mt-16 mb-24 space-y-12 text-xl md:w-2/5 md:mb-10 md:text-left md:pl-36">
-                    {/* item 1 */}
-                    <div>
-                        <h4>email</h4>
-                        <a href='mailto:mail@harpbiz.com' className="max-w-md text-gray-700">mail@harpbiz.com</a>
-                    </div>
-                    {/* item 2 */}
-                    <div>
-                        <h4>phone</h4>
-                        <p className="max-w-md text-gray-700">407-905-2501</p>
-                    </div>
-                    {/* item 3 */}
-                    <div>
-                        <h4>address</h4>
-                        <p className="max-w-md text-gray-700">Jan Jennings <br />P.O. Box 680451 <br /> Orlando, FL 32868-0451</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-       </section>
-
+      
 
         </>
     )

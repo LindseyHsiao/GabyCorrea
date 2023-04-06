@@ -8,9 +8,13 @@ export default function Header() {
 
 const [toggle, setToggle] = useState(false)
 
+const logout = event => {
+    event.preventDefault();
+    Auth.logout();
+  };
+
     return (
         <>
-    
         <nav className=" bg-orange-50">
             {/* <!-- Flex container for all items --> */}
             <div className="flex items-center px-10 py-2 justify-between">
@@ -29,7 +33,8 @@ const [toggle, setToggle] = useState(false)
                 {/* <!-- Right buttons menu --> */}
                 {Auth.loggedIn() ? (
                     <div className="hidden items-center space-x-6 font-bold lg:flex">
-                    <button onClick={Auth.logout} className="px-3 py-2 font-bold text-white bg-black rounded hover:opacity-70 uppercase">Logout</button>
+                    <Link to="/Profile" className="hover:opacity-70 uppercase">My Profile</Link>
+                    <a href="/" onClick={logout} className="px-3 py-2 font-bold text-white bg-black rounded hover:opacity-70 uppercase">Logout</a>
                 </div>
                 ) : (
 
