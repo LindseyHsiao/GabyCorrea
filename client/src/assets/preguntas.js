@@ -1,4 +1,4 @@
-export const json = {
+export const jsonSpanish = {
     "logoPosition": "right",
     "pages": [
         {
@@ -11,7 +11,7 @@ export const json = {
                         {
                             "type": "html",
                             "name": "survey_intro",
-                            "html": "<article class='intro'>    <h1 class='intro__heading intro__heading--income title'>                     Welcome              </h1>    <div class='intro__body wysiwyg'>       <p>In this section, you will be asked about your current personal details to help us create the perfect fitness and nutriton plan for you.</p>                </div> </article>"
+                            "html": "<article class='intro'>    <h1 class='intro__heading intro__heading--income title'>                     Welcome              </h1>    <div class='intro__body wysiwyg'>       <p>Spanish blurb</p>                </div> </article>"
                         }
                     ]
                 }

@@ -3,7 +3,9 @@ import { Survey } from "survey-react-ui";
 import $ from "jquery";
 import "survey-core/defaultV2.min.css";
 import "../index.css";
+import { useState } from "react";
 import { json } from "../assets/questions.js";
+import { jsonSpanish } from "../assets/preguntas.js";
 
 StylesManager.applyTheme("defaultV2");
 window["$"] = window["jQuery"] = $;
@@ -11,11 +13,21 @@ window["$"] = window["jQuery"] = $;
 require("velocity-animate/velocity.js");
 
 export default function SurveyComponent() {
-    const survey = new Model(json);
+    const [language, setLanguage] = useState(true)
+
+    let survey;
+
+    if (language) {
+        survey = new Model(json);
+
+    } else {
+        survey = new Model(jsonSpanish);
+
+    }
     function animate(animitionType, duration) {
         if (!duration) duration = 1000;
         var element = document.getElementById("root");
-       
+
         $(element).velocity(animitionType, { duration: duration });
     }
 
@@ -45,7 +57,16 @@ export default function SurveyComponent() {
         console.log(JSON.stringify(sender.data, null, 3));
     });
     animate("slideDown", 1000);
-    return (<Survey model={survey} />);
+    return (
+        <>
+            {language ? (<button onClick={() => {
+                setLanguage(false)
+            }}>preguntas en espanol</button>) : (<button onClick={() => {
+                setLanguage(true)
+            }}>english survey</button>)}
+            <Survey model={survey} />
+        </>
+    );
 }
 
 
