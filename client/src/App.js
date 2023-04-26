@@ -10,6 +10,7 @@ import SignUp from './pages/SignUp';
 import Login from './pages/Login';
 import SurveyComponent from './pages/SurveyComponent'
 import CalculatorTest from './pages/CalculatorTest';
+import GabbyFoodCalculator from './pages/GabbyFoodCalculator';
 
 
 const httpLink = createHttpLink({
@@ -45,7 +46,7 @@ function App() {
           <Route path="/SignUp" element={<SignUp />} />
           <Route path="/Login" element={<Login />} />
           <Route path="/Survey" element={<SurveyComponent />} />
-          <Route path="/Calculator" element={<CalculatorTest />} />
+          <Route path="/Calculator" element={<GabbyFoodCalculator />} />
         </Routes>
       </BrowserRouter>
     </ApolloProvider>
