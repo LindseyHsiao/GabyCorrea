@@ -413,7 +413,6 @@ export default function GabbyFoodCalculator() {
           },
     ]
 
-
     var objectFats = [
         {
             item: 'Avocado',
@@ -421,9 +420,366 @@ export default function GabbyFoodCalculator() {
             carbs: 8.5,
             fat: 14.7,
             protein: 2,
-            calories: 160,
+            calories: 160
+        },
+        {
+            item: 'Peanuts',
+            weight: 100,
+            carbs: 16.1,
+            fat: 49.2,
+            protein: 25.8,
+            calories: 567 
+        },
+        {
+            item: 'Almonds',
+            weight: 100,
+            carbs: 21.5,
+            fat: 49.9,
+            protein: 25.8,
+            calories: 579
+        },
+        {
+            item: 'Pistachios',
+            weight: 100,
+            carbs: 26.7,
+            fat: 46.7,
+            protein: 20,
+            calories: 600
+        },
+        {
+            item: 'Cashew',
+            weight: 100,
+            carbs: 32.7,
+            fat: 46.3,
+            protein: 15.3,
+            calories: 574
+        },
+        {
+            item: 'Brazil Nut',
+            weight: 100,
+            carbs: 10.6,
+            fat: 67,
+            protein: 14.1,
+            calories: 653
+        },
+        {
+            item: 'Macadamia',
+            weight: 100,
+            carbs: 5.5,
+            fat: 75,
+            protein: 9.5,
+            calories: 747
+        },
+        {
+            item: 'Pecan',
+            weight: 100,
+            carbs: 14,
+            fat: 72,
+            protein: 9,
+            calories: 740
+        },
+        {
+            item: 'Walnut',
+            weight: 100,
+            carbs: 13.7,
+            fat: 65.2,
+            protein: 15.2,
+            calories: 654
+        },
+        {
+            item: 'Pine Nut',
+            weight: 100,
+            carbs: 13.1,
+            fat: 68.4,
+            protein: 13.7,
+            calories: 673
+        },
+        {
+            item: 'Pumpkin Seed Cashita’s',
+            weight: 100,
+            carbs: 16.7,
+            fat: 36.7,
+            protein: 40,
+            calories: 557
+        },
+        {
+            item: 'Hemp Seed Manitoba Harvest',
+            weight: 100,
+            carbs: 3.3,
+            fat: 50,
+            protein: 33.3,
+            calories: 600
+        },
+        {
+            item: 'Chia Seed Badia',
+            weight: 100,
+            carbs: 41.9,
+            fat: 30.2,
+            protein: 16.3,
+            calories: 488
+        },
+        {
+            item: 'Tahini Yaleh',
+            weight: 100,
+            carbs: 5,
+            fat: 60,
+            protein: 20,
+            calories: 640
+        },
+        {
+            item: 'Coconut',
+            weight: 100,
+            carbs: 15,
+            fat: 33,
+            protein: 3.3,
+            calories: 354
+        },
+        {
+            item: 'Light Coconut Milk Thai Heritage',
+            weight: 100,
+            carbs: 1.6,
+            fat: 8.1,
+            protein: 0.8,
+            calories: 82
+        },
+        {
+            item: 'Olive Oil',
+            weight: 100,
+            carbs: 0,
+            fat: 91,
+            protein: 0,
+            calories: 820
+        },
+        {
+            item: 'Coconut Oil',
+            weight: 100,
+            carbs: 0.8,
+            fat: 99.1,
+            protein: 0,
+            calories: 833
+        },
+        {
+            item: 'Ghee Butter',
+            weight: 100,
+            carbs: 0,
+            fat: 99.8,
+            protein: 0,
+            calories: 898
+        },
+        {
+            item: 'Peanut Butter Smuckers',
+            weight: 100,
+            carbs: 15.6,
+            fat: 50,
+            protein: 25,
+            calories: 562
+        },
+        {
+            item: 'Cashew Butter Mr. Natural',
+            weight: 100,
+            carbs: 23,
+            fat: 43,
+            protein: 20,
+            calories: 559
+        },
+        {
+            item: 'Almond Butter Kirkland',
+            weight: 100,
+            carbs: 21.9,
+            fat: 53.1,
+            protein: 18.8,
+            calories: 656
         },
     ]
+
+    var objectProteins = [
+        {
+            item: 'Filet Mignon',
+            weight: 100,
+            carbs: 0,
+            fat: 5,
+            protein: 21.4,
+            calories: 137
+        },
+        {
+            item: 'Pork Tenderloin',
+            weight: 100,
+            carbs: 0,
+            fat: 3.5,
+            protein: 26,
+            calories: 143
+        },
+        {
+            item: 'Ground Beef 98%',
+            weight: 100,
+            carbs: 0,
+            fat: 2.7,
+            protein: 20.5,
+            calories: 152
+        },
+        {
+            item: 'Chicken Thigh',
+            weight: 100,
+            carbs: 0,
+            fat: 2.8,
+            protein: 20.5,
+            calories: 152
+        },
+        {
+            item: 'Salmon',
+            weight: 100,
+            carbs: 0,
+            fat: 4.4,
+            protein: 20.5,
+            calories: 127
+        },
+        {
+            item: 'Chicken Breast',
+            weight: 100,
+            carbs: 0,
+            fat: 1,
+            protein: 31,
+            calories: 110
+        },
+        {
+            item: 'Tuna',
+            weight: 100,
+            carbs: 0,
+            fat: 1,
+            protein: 25,
+            calories: 115
+        },
+        {
+            item: 'Shrimp',
+            weight: 100,
+            carbs: 0,
+            fat: 0.5,
+            protein: 20,
+            calories: 85
+        },
+        {
+            item: 'White Fish',
+            weight: 100,
+            carbs: 0,
+            fat: 1.7,
+            protein: 20,
+            calories: 96
+        },
+        {
+            item: 'Squid',
+            weight: 100,
+            carbs: 0,
+            fat: 1,
+            protein: 16,
+            calories: 78
+        },
+        {
+            item: 'Ground Turkey 99%',
+            weight: 100,
+            carbs: 0,
+            fat: 1.3,
+            protein: 20,
+            calories: 85
+        },
+        {
+            item: 'Turkey Breast',
+            weight: 100,
+            carbs: 0,
+            fat: 2,
+            protein: 22.3,
+            calories: 110
+        },
+        {
+            item: 'Liquid Egg Whites',
+            weight: 100,
+            carbs: 1,
+            fat: 0,
+            protein: 10,
+            calories: 42
+        },
+        {
+            item: 'Egg (One Unit)',
+            weight: 100,
+            carbs: 0.4,
+            fat: 4.8,
+            protein: 6.3,
+            calories: 72
+        },
+        {
+            item: 'Egg White (One Unit)',
+            weight: 100,
+            carbs: 0.2,
+            fat: 0.1,
+            protein: 3.6,
+            calories: 17
+        },
+        {
+            item: 'Whey Protien ISO100',
+            weight: 30,
+            carbs: 1,
+            fat: 0,
+            protein: 25,
+            calories: 110
+        },
+        {
+            item: 'Whey Protein Sascha Fitness',
+            weight: 30,
+            carbs: 0.5,
+            fat: 0,
+            protein: 24,
+            calories: 105
+        },
+        {
+            item: 'Bone Broth Power Savvy',
+            weight: 35,
+            carbs: 6,
+            fat: 3.5,
+            protein: 22,
+            calories: 140
+        },
+        {
+            item: 'Veggie Power Savvy',
+            weight: 30,
+            carbs: 5.4,
+            fat: 1.1,
+            protein: 20.4,
+            calories: 107
+        },
+        {
+            item: 'Greek Yogurt Nonfat Plain Chobani',
+            weight: 100,
+            carbs: 3.5,
+            fat: 0,
+            protein: 9.4,
+            calories: 53
+        },
+        {
+            item: 'Greek Yogurt Nonfat Plain Fage',
+            weight: 100,
+            carbs: 3.3,
+            fat: 0,
+            protein: 10.7,
+            calories: 54
+        },
+        {
+            item: 'Yogurt Griego Natural San Martin',
+            weight: 100,
+            carbs: 4.1,
+            fat: 0,
+            protein: 8.6,
+            calories: 50
+        },
+        {
+            item: 'Yogurt Griego Natural Sketos',
+            weight: 100,
+            carbs: 4.7,
+            fat: 0,
+            protein: 10,
+            calories: 60
+        },
+       
+    ]
+
     return (
         <div>GabbyFoodCalculator</div>
     )
