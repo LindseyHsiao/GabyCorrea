@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function GabbyFoodCalculator() {
     // create the array of objects for the data
-    var objectCarbs = [
+    var carbs = [
         {
             item: 'Rice(Cooked)',
             weight: 100,
@@ -413,7 +413,7 @@ export default function GabbyFoodCalculator() {
           },
     ]
 
-    var objectFats = [
+    var fats = [
         {
             item: 'Avocado',
             weight: 100,
@@ -592,7 +592,7 @@ export default function GabbyFoodCalculator() {
         },
     ]
 
-    var objectProteins = [
+    var proteins = [
         {
             item: 'Filet Mignon',
             weight: 100,
@@ -780,7 +780,34 @@ export default function GabbyFoodCalculator() {
        
     ]
 
+// program to append an object to an array
+
+// function insertProtein(arr, obj) {
+//  // append object
+//     arr.push(obj);
+//     console.log(arr);
+// }
+
+// // object to add
+// let additionalItem = {
+//     item: 'Filet Mignon',
+//     weight: 100,
+//     carbs: 0,
+//     fat: 5,
+//     protein: 21.4,
+//     calories: 137
+// };
+
+// call the function
+//insertProtein(proteins, additionalItem);
+
+//add function to calculate equivalncies for weight, carbs, fat protein and calories
+
+//add function to calculate equivalent substitutions
+
     return (
         <div>GabbyFoodCalculator</div>
+
+       
     )
 }
