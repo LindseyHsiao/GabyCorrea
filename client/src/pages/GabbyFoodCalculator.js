@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 
 export default function GabbyFoodCalculator() {
+    const [subList, setSubList] = useState([])
     // create the array of objects for the data
     var carbs = [
         {
@@ -34,7 +35,7 @@ export default function GabbyFoodCalculator() {
             fat: 0,
             protein: 3,
             calories: 90,
-          },
+        },
         {
             item: 'Yuca',
             weight: 100,
@@ -50,367 +51,367 @@ export default function GabbyFoodCalculator() {
             fat: 0.4,
             protein: 1.3,
             calories: 122,
-          },
-          {
+        },
+        {
             item: 'Quinoa',
             weight: 100,
             carbs: 21.1,
             fat: 2.2,
             protein: 4.3,
             calories: 120,
-          },
-          {
+        },
+        {
             item: 'Lentils',
             weight: 100,
             carbs: 12.2,
             fat: 0.4,
             protein: 9,
             calories: 88,
-          },
-          {
+        },
+        {
             item: 'Black Beans (Cooked)',
             weight: 100,
             carbs: 15,
             fat: 0.5,
             protein: 8.9,
             calories: 100,
-          },
-          {
+        },
+        {
             item: 'Chickpeas (Cooked)',
             weight: 100,
             carbs: 27.4,
             fat: 2.6,
             protein: 8.9,
             calories: 100,
-          },
-          {
+        },
+        {
             item: 'Strawberries',
             weight: 100,
             carbs: 7.7,
             fat: 0.3,
             protein: 0.7,
             calories: 32,
-          },
-          {
+        },
+        {
             item: 'Bluberries',
             weight: 100,
             carbs: 14.5,
             fat: 0.3,
             protein: 0.7,
             calories: 57,
-          },
-          {
+        },
+        {
             item: 'Blackberries',
             weight: 100,
             carbs: 9.6,
             fat: 0.5,
             protein: 1.4,
             calories: 43,
-          },
-          {
+        },
+        {
             item: 'Raspberries',
             weight: 100,
             carbs: 11.9,
             fat: 0.6,
             protein: 1.2,
             calories: 52,
-          },
-          {
+        },
+        {
             item: 'Banana',
             weight: 100,
             carbs: 22.8,
             fat: 0.3,
             protein: 1.1,
             calories: 89,
-          },
-          {
+        },
+        {
             item: 'Papaya',
             weight: 100,
             carbs: 9.8,
             fat: 0,
             protein: 0.1,
             calories: 39,
-          },
-          {
+        },
+        {
             item: 'Watermelon',
             weight: 100,
             carbs: 7.6,
             fat: 0.2,
             protein: 0.6,
             calories: 30,
-          },
-          {
+        },
+        {
             item: 'Kiwi',
             weight: 100,
             carbs: 15,
             fat: 0.5,
             protein: 1.1,
             calories: 61,
-          },
-          {
+        },
+        {
             item: 'Mango',
             weight: 100,
             carbs: 15,
             fat: 0.4,
             protein: 0.8,
             calories: 60,
-          },
-          {
+        },
+        {
             item: 'Pineapple',
             weight: 100,
             carbs: 13.1,
             fat: 0.1,
             protein: 0.5,
             calories: 50,
-          },
-          {
+        },
+        {
             item: 'Tangerine',
             weight: 100,
             carbs: 13.3,
             fat: 0.3,
             protein: 0.8,
             calories: 53,
-          },
-          {
+        },
+        {
             item: 'Orange',
             weight: 100,
             carbs: 11.8,
             fat: 0.1,
             protein: 0.9,
             calories: 47,
-          },
-          {
+        },
+        {
             item: 'Honeydew',
             weight: 100,
             carbs: 9,
             fat: 0.1,
             protein: 0.5,
             calories: 36,
-          },
-          {
+        },
+        {
             item: 'Grapes',
             weight: 100,
             carbs: 17.1,
             fat: 0.3,
             protein: 0.6,
             calories: 67,
-          },
-          {
+        },
+        {
             item: 'Pear',
             weight: 100,
             carbs: 15.2,
             fat: 0.1,
             protein: 0.4,
             calories: 57,
-          },
-          {
+        },
+        {
             item: 'Red Apple',
             weight: 100,
             carbs: 14.1,
             fat: 0.2,
             protein: 0.3,
             calories: 59,
-          },
-          {
+        },
+        {
             item: 'Green Apple',
             weight: 100,
             carbs: 13.6,
             fat: 0.2,
             protein: 0.4,
             calories: 58,
-          },
-          {
+        },
+        {
             item: 'Peach',
             weight: 100,
             carbs: 10.1,
             fat: 0.3,
             protein: 0.9,
             calories: 42,
-          },
-          {
+        },
+        {
             item: 'Pomegranate',
             weight: 100,
             carbs: 18.7,
             fat: 1.2,
             protein: 1.7,
             calories: 83,
-          },
-          {
+        },
+        {
             item: 'Figs',
             weight: 100,
             carbs: 19.2,
             fat: 0.3,
             protein: 0.8,
             calories: 74,
-          },
-          {
+        },
+        {
             item: 'Carrot',
             weight: 100,
             carbs: 9.6,
             fat: 0.2,
             protein: 0.9,
             calories: 41,
-          },
-          {
+        },
+        {
             item: 'Pumpkin',
             weight: 100,
             carbs: 6.5,
             fat: 0.1,
             protein: 1,
             calories: 26,
-          },
-          {
+        },
+        {
             item: 'Zucchini',
             weight: 100,
             carbs: 3.1,
             fat: 0.3,
             protein: 1.2,
             calories: 17,
-          },
-          {
+        },
+        {
             item: 'Corn',
             weight: 100,
             carbs: 18.7,
             fat: 1.4,
             protein: 3.3,
             calories: 86,
-          },
-          {
+        },
+        {
             item: 'Tomato',
             weight: 100,
             carbs: 3.9,
             fat: 0.2,
             protein: 0.9,
             calories: 18,
-          },
-          {
+        },
+        {
             item: 'Spinach',
             weight: 100,
             carbs: 3.6,
             fat: 0.4,
             protein: 0.9,
             calories: 18,
-          },
-          {
+        },
+        {
             item: 'Kale',
             weight: 100,
             carbs: 4.4,
             fat: 1.5,
             protein: 2.9,
             calories: 35,
-          },
-          {
+        },
+        {
             item: 'Arugula',
             weight: 100,
             carbs: 3.7,
             fat: 0.7,
             protein: 2.6,
             calories: 25,
-          },
-          {
+        },
+        {
             item: 'Cucumber',
             weight: 100,
             carbs: 3.6,
             fat: 0.1,
             protein: 0.6,
             calories: 15,
-          },
-          {
+        },
+        {
             item: 'Celery',
             weight: 100,
             carbs: 3,
             fat: 0.2,
             protein: 0.7,
             calories: 16,
-          },
-          {
+        },
+        {
             item: 'Broccoli',
             weight: 100,
             carbs: 6.6,
             fat: 0.4,
             protein: 2.8,
             calories: 34,
-          },
-          {
+        },
+        {
             item: 'Cauliflower',
             weight: 100,
             carbs: 5,
             fat: 0.3,
             protein: 1.9,
             calories: 25,
-          },
-          {
+        },
+        {
             item: 'Asparagus',
             weight: 100,
             carbs: 3.9,
             fat: 0.1,
             protein: 2.2,
             calories: 20,
-          },
-          {
+        },
+        {
             item: 'Bell Pepper',
             weight: 100,
             carbs: 6,
             fat: 0.3,
             protein: 1,
             calories: 26,
-          },
-          {
+        },
+        {
             item: 'Red Cabbage',
             weight: 100,
             carbs: 7.4,
             fat: 0.2,
             protein: 1.4,
             calories: 31,
-          },
-          {
+        },
+        {
             item: 'Eggplant',
             weight: 100,
             carbs: 5.9,
             fat: 0.2,
             protein: 1,
             calories: 25,
-          },
-          {
+        },
+        {
             item: 'Whit Mushroom',
             weight: 100,
             carbs: 3.3,
             fat: 0,
             protein: 3.1,
             calories: 22,
-          },
-          {
+        },
+        {
             item: 'Brussel Sprout',
             weight: 100,
             carbs: 8.9,
             fat: 0.3,
             protein: 3.4,
             calories: 43,
-          },
-          {
+        },
+        {
             item: 'White Onion',
             weight: 100,
             carbs: 3.3,
             fat: 0.1,
             protein: 1.1,
             calories: 40,
-          },
-          {
+        },
+        {
             item: 'Ezekiel Flourless Sprouted Grain Bread (1 Slice)',
             weight: 100,
             carbs: 15,
             fat: 0.5,
             protein: 5,
             calories: 80,
-          },
-          {
+        },
+        {
             item: 'Pan Trenzado de Arroz Siempre Natural',
             weight: 100,
             carbs: 25.5,
             fat: 7.3,
             protein: 3.6,
             calories: 185,
-          },
+        },
     ]
 
     var fats = [
@@ -428,7 +429,7 @@ export default function GabbyFoodCalculator() {
             carbs: 16.1,
             fat: 49.2,
             protein: 25.8,
-            calories: 567 
+            calories: 567
         },
         {
             item: 'Almonds',
@@ -777,37 +778,88 @@ export default function GabbyFoodCalculator() {
             protein: 10,
             calories: 60
         },
-       
+
     ]
 
-// program to append an object to an array
+    async function calculate(placeHolder) {
+        const chosenCarb = await carbs.filter((item) => item.item === placeHolder);
 
-// function insertProtein(arr, obj) {
-//  // append object
-//     arr.push(obj);
-//     console.log(arr);
-// }
+        //filter out carb options in a certain range
+        const filteredCarbs = await carbs.filter((item) => item.item !== chosenCarb[0].item)
 
-// // object to add
-// let additionalItem = {
-//     item: 'Filet Mignon',
-//     weight: 100,
-//     carbs: 0,
-//     fat: 5,
-//     protein: 21.4,
-//     calories: 137
-// };
+        const filteredRange = await filteredCarbs.map((item) => {
+            let startingPoint = chosenCarb[0].carbs
 
-// call the function
-//insertProtein(proteins, additionalItem);
+            let serving = parseFloat(startingPoint / item.carbs).toFixed(2)
 
-//add function to calculate equivalncies for weight, carbs, fat protein and calories
+            let newObj = {
+                ...item,
+                serving: parseFloat(serving),
+                totalGrams: parseFloat(serving) * 100
+            }
 
-//add function to calculate equivalent substitutions
+            return newObj
+        })
+        setSubList(filteredRange)
+    }
+
+
+    useEffect(() => {
+        // calculate('Rice(Cooked)')
+        console.log(subList);
+    }, [subList])
+
+
+
+
+
+
+
+
+
+    // program to append an object to an array
+
+    // function insertProtein(arr, obj) {
+    //  // append object
+    //     arr.push(obj);
+    //     console.log(arr);
+    // }
+
+    // // object to add
+    // let additionalItem = {
+    //     item: 'Filet Mignon',
+    //     weight: 100,
+    //     carbs: 0,
+    //     fat: 5,
+    //     protein: 21.4,
+    //     calories: 137
+    // };
+
+    // call the function
+    //insertProtein(proteins, additionalItem);
+
+    //add function to calculate equivalncies for weight, carbs, fat protein and calories
+
+    //add function to calculate equivalent substitutions
 
     return (
-        <div>GabbyFoodCalculator</div>
+        <div style={{display: 'flex'}}>
+        <div style={{width: '20%', padding: '10px'}}>
+            <div>GabbyFoodCalculator</div>
+            <button type="button" onClick={() => calculate('Rice(Cooked)')}>run</button>
+        </div>
 
-       
+            <div style={{width: '80%', padding: '10px'}}>
+                {subList.map((item) => (
+                    <div style={{ border: '3px solid black', margin: '10px 15px', padding: '10px' }}>
+                        <h3>Food: {item.item}</h3>
+                        <p>Total Serving: {item.serving}</p>
+                        <p>Total Grams: {item.totalGrams}</p>
+                    </div>
+                ))}
+            </div>
+        </div>
+
+
     )
 }
