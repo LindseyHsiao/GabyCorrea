@@ -782,16 +782,21 @@ export default function GabbyFoodCalculator() {
     ]
 
     async function calculate(placeHolder) {
+        //original carb selection
         const chosenCarb = await carbs.filter((item) => item.item === placeHolder);
 
-        //filter out carb options in a certain range
+        //filter out carb options- exclude selected carb
         const filteredCarbs = await carbs.filter((item) => item.item !== chosenCarb[0].item)
 
+        
         const filteredRange = await filteredCarbs.map((item) => {
+            //use selcted carb as refrence for servings
             let startingPoint = chosenCarb[0].carbs
 
+            //use startingPoint to calculate equivalencies for all carb options
             let serving = parseFloat(startingPoint / item.carbs).toFixed(2)
 
+            //dispaly all carb equivalencies in grams
             let newObj = {
                 ...item,
                 serving: parseFloat(serving),
