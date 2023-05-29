@@ -857,7 +857,7 @@ export default function GabbyFoodCalculator() {
 
                 <div style={{ width: '100%', padding: '10px' }}>
                     <label htmlFor="carbs">Choose a carb:</label>
-                    <select name="carb" id="carbs" onChange={handleChange}>
+                    <select style={{ width: '100%', padding: '10px' }} name="carb" id="carbs" onChange={handleChange}>
                         {/* <option value="volvo">Volvo</option>
                         <option value="saab">Saab</option>
                         <option value="mercedes">Mercedes</option>
@@ -872,6 +872,7 @@ export default function GabbyFoodCalculator() {
                     id='carbValue'
                     value={numberValue}
                     onChange={(e)=> setNumberValue(e.target.value)}
+    
                     />
                 </div>
                     <button type="button" onClick={() => calculate(carbSelection)}>run</button>
