@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react'
 export default function GabbyFoodCalculator() {
     const [subList, setSubList] = useState([])
     const [carbSelection, setCarbSelection] = useState("")
+    const [numberValue, setNumberValue] = useState(0)
     // create the array of objects for the data
     var carbs = [
         {
@@ -785,6 +786,8 @@ export default function GabbyFoodCalculator() {
     async function calculate(carbName) {
         //original carb selection return new array of one object that matches selection
         const chosenCarb = await carbs.filter((item) => item.item === carbName);
+    const numberCarbData = numberValue/100 * chosenCarb[0].carbs
+    console.log(numberCarbData)
 
         //filter out carb options- exclude selected carb
         const filteredCarbs = await carbs.filter((item) => item.item !== chosenCarb[0].item)
@@ -792,7 +795,7 @@ export default function GabbyFoodCalculator() {
 
         const filteredRange = await filteredCarbs.map((item) => {
             //use selcted carb as refrence for servings
-            let startingPoint = chosenCarb[0].carbs
+            let startingPoint = numberCarbData
 
             //use startingPoint to calculate equivalencies for all carb options- chosen carb carbs divided by sub abount of carbs returns servings
             let serving = parseFloat(startingPoint / item.carbs).toFixed(2)
@@ -821,6 +824,7 @@ export default function GabbyFoodCalculator() {
         
       };
 
+     
     // program to append an object to an array
 
     // function insertProtein(arr, obj) {
@@ -850,18 +854,25 @@ export default function GabbyFoodCalculator() {
         <div style={{ display: 'flex' }}>
             <div style={{ width: '20%', padding: '10px' }}>
                 <div>GabbyFoodCalculator</div>
-                <div style={{ width: '100%', padding: '10px' }}>
-                    <label for="carbs">Choose a carb:</label>
 
+                <div style={{ width: '100%', padding: '10px' }}>
+                    <label htmlFor="carbs">Choose a carb:</label>
                     <select name="carb" id="carbs" onChange={handleChange}>
                         {/* <option value="volvo">Volvo</option>
                         <option value="saab">Saab</option>
                         <option value="mercedes">Mercedes</option>
                         <option value="audi">Audi</option> */}
-                        {carbs.map((item)=> (
-                            <option value={item.item}>{item.item}</option>
+                        {carbs.map((item, i)=> (
+                            <option  key={i} value={item.item}>{item.item}</option>
                         ))}
                     </select>
+                    <label htmlFor='carbValue'>Enter Grams: </label>
+                    <input type="number" 
+                    name="carbValue"
+                    id='carbValue'
+                    value={numberValue}
+                    onChange={(e)=> setNumberValue(e.target.value)}
+                    />
                 </div>
                     <button type="button" onClick={() => calculate(carbSelection)}>run</button>
             </div>
@@ -870,7 +881,7 @@ export default function GabbyFoodCalculator() {
                 {subList.map((item) => (
                     <div style={{ border: '3px solid black', margin: '10px 15px', padding: '10px' }}>
                         <h3>Food: {item.item}</h3>
-                        <p>Total Serving: {item.serving}</p>
+                        {/* <p>Total Serving: {item.serving}</p> */}
                         <p>Total Grams: {item.totalGrams}</p>
                     </div>
                 ))}
